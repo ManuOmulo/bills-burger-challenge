@@ -8,7 +8,10 @@ public class Burger {
   }
 
   public Burger(String type) {
-    this(type, 1900);
+    this(type, 400);
+  }
+
+  public Burger() {
   }
 
   protected void addTopings() {
@@ -17,7 +20,7 @@ public class Burger {
 
   public double getPrice() {
     switch (type) {
-      case "deluxe" -> price = 1900;
+      case "pork" -> price = 350;
       case "chicken" -> price = 500;
       default -> price = 400;
     }

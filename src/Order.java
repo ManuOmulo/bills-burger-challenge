@@ -16,7 +16,7 @@ public class Order {
   }
 
   protected double calculatePrice() {
-    if (burger.getType().contains("deluxe")) {
+    if (burger.getClass().getSimpleName().contains("DeluxeBurger")) {
       return burger.getPrice();
     }
     return drink.getDrinkPrice() + sideItem.getSideItemPrice() + burger.getPrice();
