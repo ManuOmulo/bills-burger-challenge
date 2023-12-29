@@ -14,30 +14,29 @@ public class Burger {
   public Burger() {
   }
 
-  protected void addToppings(boolean addBacon, boolean addMushrooms, boolean addEggs, boolean addGuac, boolean addBbqSauce) {
-    if (addBacon) {
-      price += 250;
-    }
-    if (addMushrooms) {
-      price += 120;
-    }
-    if (addEggs) {
-      price += 100;
-    }
-    if (addGuac) {
-      price += 100;
-    }
-    if (addBbqSauce) {
-      price += 90;
+  protected void addToppings(boolean addBacon, boolean addMushrooms, boolean addBbqSauce) {
+    int count = 0;
+
+    while (count < 4) {
+      if (addBacon) {
+        price += 250;
+        count += 1;
+      }
+      if (addMushrooms) {
+        price += 120;
+        count += 1;
+      }
+      if (addBbqSauce) {
+        price += 90;
+        count += 1;
+      }
     }
 
-    String bacon = (addBacon) ? "bacon" : " ";
+    String bacon = (addBacon) ? "bacon" : "";
     String mushrooms = (addMushrooms) ? "mushrooms" : "";
-    String eggs = (addEggs) ? "eggs" : "";
-    String guacamole = (addGuac) ? "guacamole" : "";
     String bbq = (addBbqSauce) ? "barbeque sauce" : "";
 
-    System.out.printf("Toppings: %s %s %s %s %s", bacon, mushrooms, eggs, guacamole, bbq);
+    System.out.printf("Toppings: %s %s %s \n", bacon, mushrooms, bbq);
   }
 
   public double getPrice() {
